@@ -1,0 +1,15 @@
+server:
+  port: 6666
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+management:
+  port: 6667
+spring:
+  application:
+    name: turbine
+turbine:
+  app-config: eureka-consumer
+  cluster-name-expression: new String("default")
+  combine-host-port: true

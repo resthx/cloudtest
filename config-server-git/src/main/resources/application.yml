@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          username: 905459569@qq.com
+          password: jlg19950914
+          uri: https://github.com/kongGe55/config_test.git
+          search-paths: respo # git仓库地址下的相对地址，可以配置多个，用,分割。
+server:
+  port: 7777

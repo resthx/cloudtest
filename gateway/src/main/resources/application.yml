@@ -1,0 +1,28 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: service-hi
+          uri: lb://service-hi
+          order: 0
+          predicates:
+            - Path=/servicehi/**
+          filters:
+            - StripPrefix=1
+            - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
