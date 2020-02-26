@@ -1,18 +1,15 @@
-package com.ji.servicehi;
+package com.example.uaa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import tk.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class ServiceHiApplication {
-
+@MapperScan("com.example.uaa.mapper")
+public class UaaApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ServiceHiApplication.class, args);
+        SpringApplication.run(UaaApplication.class, args);
     }
-
-
 }

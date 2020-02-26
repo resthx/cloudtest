@@ -17,8 +17,14 @@ spring:
           filters:
             - StripPrefix=1
             - AddResponseHeader=X-Response-Default-Foo, Default-Bar
-
-
+        - id: uaa
+            uri: lb://uaa
+            order: 0
+            predicates:
+              - Path=/uaa/**
+            filters:
+              - StripPrefix=1
+              - AddResponseHeader=X-Response-Default-Foo, Default-Bar
 eureka:
   client:
     service-url:
